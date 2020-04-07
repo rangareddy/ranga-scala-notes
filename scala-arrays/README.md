@@ -1,40 +1,104 @@
-# Java API Example for reading & writing files into HDFS
+# Scala Arrays Demo
 
-### Step1: Download the Project
-Goto any specific folder and download the project using git clone. \
-`git clone https://github.com/rangareddy/hdfs-java-api.git`
+#### Way1: Declaring, Assigning and Accessing an Array values
+ ```scala  
+package com.ranga.scala.array
 
-### Step2: Build the Project
-`mvn clean package`
+object ArrayDemo1 extends App {
 
-### Step3: Run the Project
-`java -jar target/hdfs-java-api-1.0-SNAPSHOT.jar hdfs://localhost:8020`
+  // declare int array
+  val intArray: Array[Int] = new Array[Int](3)
 
-### Step4: Verify the output
-2020-03-31 15:29:55 INFO  HDFSClient:59 - Configuration object built successfully with the params {fs.defaultFS=hdfs://localhost:8020} \
-2020-03-31 15:29:55 WARN  NativeCodeLoader:60 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable \
-2020-03-31 15:29:56 INFO  HDFSJavaAPIDemo:33 - Creating a hdfs dir /ranga/hdfs/data/ \
-2020-03-31 15:29:56 INFO  HDFSClient:53 - HDFS directory </ranga/hdfs/data> created successfully. \
-2020-03-31 15:29:56 INFO  HDFSJavaAPIDemo:36 - Creating a file /ranga/hdfs/data/README.md in hdfs. \
-2020-03-31 15:29:57 INFO  HDFSClient:36 - HDFS directory </ranga/hdfs/data/README.md> deleted successfully. \
-2020-03-31 15:29:59 INFO  HDFSFileWriter:78 - Data is successfully written to hdfsPath </ranga/hdfs/data/README.md> \
-2020-03-31 15:29:59 INFO  HDFSJavaAPIDemo:45 - File </ranga/hdfs/data/README.md> created successfully \
-2020-03-31 15:29:59 INFO  HDFSJavaAPIDemo:47 - Reading data from hdfs file </ranga/hdfs/data/README.md> \
-2020-03-31 15:30:00 INFO  HDFSJavaAPIDemo:49 - File content \
-Hadoop Components: 
- ---------------------------------------------------
- 1. HDFS - Hadoop Distributed File System
- 2. MR - MAPREDUCE
- 3. YARN - Yet Another Resource Negotiator
+  //declare String array
+  val stringArray = new Array[String](5);
 
-2020-03-31 15:30:00 INFO  HDFSJavaAPIDemo:51 - Renaming a file \
-2020-03-31 15:30:00 INFO  HDFSClient:67 - HDFS File /ranga/hdfs/data/README.md is successfully renamed to /ranga/hdfs/data/README_1.md \
-2020-03-31 15:30:00 INFO  HDFSJavaAPIDemo:54 - Listing file(s) under </ranga/hdfs/data/> directory. \
-2020-03-31 15:30:00 INFO  HDFSJavaAPIDemo:58 - hdfs://localhost:8020/ranga/hdfs/data/README_1.md \
-2020-03-31 15:30:00 INFO  HDFSJavaAPIDemo:61 - Deleting a hdfs dir </ranga/hdfs/data/> \
-2020-03-31 15:30:01 INFO  HDFSClient:36 - HDFS directory </ranga/hdfs/data> deleted successfully. \
+  // assigning values to intArray
+  intArray(0) = 123
+  intArray(1) = 11
+  intArray(2) = 210
 
-## Note
-If u want to use this code in production remove the following two lines from ConfigUtils.java file <br/>
-`System.setProperty("hadoop.home.dir", "/");
-System.setProperty("HADOOP_USER_NAME", "hdfs");`
+  // assigning values to stringArray
+  stringArray(0) = "Ranga"
+  stringArray(1) = "Reddy"
+  stringArray(2) = "Nishanth"
+  stringArray(3) = "Raja"
+
+  // accessing intArray values
+  println(intArray(0))
+  println(intArray(2))
+
+  // accessing stringArray values
+  println(stringArray(1))
+  println(stringArray(3))
+  
+}
+```
+
+#### Way2: Declaring, Assigning and Accessing an Array values
+ ```scala 
+package com.ranga.scala.array
+
+object ArrayDemo2 extends App {
+
+  // declare and initialize int array
+  val intArray: Array[Int] = Array[Int](3, 4, 5)
+  println(intArray(0))
+  println(intArray(1))
+  println(intArray(2))
+
+  //declare and initialize String array
+  val stringArray = Array[String]("Ranga", "Reddy", "Reddy", "Nishanth", "Raja");
+
+  // accessing array values
+  println(stringArray(1))
+  println(stringArray(3))
+}
+```
+
+#### Way3: Declaring, Assigning and Accessing Array values using ArrayBuffer
+```scala
+package com.ranga.scala.array
+
+import scala.collection.mutable.ArrayBuffer
+
+object ArrayBufferDemo extends App {
+  val arrayBuffer = new ArrayBuffer[String]()
+
+  // adding one element
+  arrayBuffer += "ranga"
+  arrayBuffer += "yasu"
+
+  // add one or more elements using +=
+  arrayBuffer += ("reddy", "nishanth")
+
+  // adding one or more element using append method
+  arrayBuffer.append("raja", "vinod", "manoj")
+
+  println(s"Array length ${arrayBuffer.length}")
+
+  println("\nprinting arrayBuffer values using foreach()")
+  arrayBuffer.foreach(println)
+
+  println("\nprinting arrayBuffer values using for()")
+  for (i <- 0 until arrayBuffer.length) {
+    println(arrayBuffer(i))
+  }
+
+  // deletes one element using value
+  arrayBuffer -= "vinod"
+
+  // deletes one or more element using value
+  arrayBuffer -= ("yasu", "manoj")
+
+  // deletes one element using index
+  arrayBuffer.remove(3)
+
+  // deletes two or more element using index
+  arrayBuffer.remove(1,2)
+
+  println("\nprinting arrayBuffer values after removing")
+  println(arrayBuffer)
+  
+}
+
+```
