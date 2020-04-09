@@ -1,0 +1,26 @@
+package com.ranga.scala.collection.map.mutable
+
+import scala.collection.immutable.{Map, TreeMap}
+
+object TreeMapDemo extends App {
+
+  // creating a treeMap
+  val treeMap = TreeMap[String, String]("key1" -> "value1", "key3" -> "value3", "key2" -> "value2");
+
+  val treeMap2 = TreeMap[Int, String]();
+
+  // printing treeMap values
+  printMapValue(treeMap)
+
+  // checking the treeMap size
+  println(s"\ntreeMap size ${treeMap.size}")
+
+  // retrieving the value based on key2
+  println(s"get(key2) value is ${treeMap.get("key2").get}")
+
+  def printMapValue(map: Map[String, String]): Unit = {
+    println("\nPrinting Map values")
+    map.foreach(mapValue => println(mapValue._1 + " : " + mapValue._2))
+  }
+
+}
