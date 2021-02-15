@@ -1,6 +1,7 @@
 # intellij related
 .idea/
 out/
+*.iml
 
 # maven related
 target/
@@ -9,4 +10,3 @@ dependency-reduced-pom.xml
 # OS generated files #
 ######################
 .DS_Store
-*.iml
