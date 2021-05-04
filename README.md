@@ -1,4 +1,4 @@
-# Scala Programs and Notes By Ranga Reddy
+# Scala Programs and Notes
 
 ## Table of Contents
 
