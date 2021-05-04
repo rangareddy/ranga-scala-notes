@@ -1,6 +1,6 @@
 # Scala Notes By Ranga Reddy
 
-### Scala Programs and Notes
+## Scala Programs and Notes
 
 * [Scala DataTypes](scala-datatypes)
 * [Scala Operators](scala-operators)
