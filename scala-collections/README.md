@@ -1,6 +1,11 @@
-# Scala Collections Demos
+# Scala Collections
 
-### Scala Collections High Level API(scala.collection)
+Scala collection is divided into two parts:
+
+1. **Mutable collection** – This collection is mutable, can mutate or change the value. The package for mutable is **scala.collection.mutable**.
+2. **Immutable collection** – This collection is immutable and values can’t be changed or mutated. The package for immutable is **scala.collection.immutable**.
+
+## Scala Collections High Level API(scala.collection)
 
 ![Scala Collection High Level API](https://www.scala-lang.org/docu/files/collections-api/collections.png)
 
@@ -15,7 +20,7 @@
         * Map
             * SortedMap
     
-##### Scala Collections Low Level Immutable API (scala.collection.immutable)
+## Scala Collections Low Level Immutable API (scala.collection.immutable)
 
 ![Scala Collection Low Level Immutable API](https://www.scala-lang.org/docu/files/collections-api/collections.immutable.png)
 
@@ -43,7 +48,7 @@
         * TreeMap
     * ListMap
 
-##### Scala Collections Low Level Mutable API (scala.collection.mutable)
+## Scala Collections Low Level Mutable API (scala.collection.mutable)
 
 ![Scala Collection Low Level Mutable API](https://www.scala-lang.org/docu/files/collections-api/collections.mutable.png)
 
